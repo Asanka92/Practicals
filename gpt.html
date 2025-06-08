@@ -1,0 +1,196 @@
+Here's a comprehensive code for a web page that includes a navbar, footer, images, and paragraphs.
+
+I've structured it clearly with comments and used basic CSS to make it presentable.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My  Webpage</title>
+    <style>
+        /* --- General Body and Layout Styling --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex; /* Use flexbox for overall page layout */
+            flex-direction: column; /* Stack children vertically */
+            min-height: 100vh; /* Ensure page takes full viewport height */
+        }
+
+        /* --- Navbar Styling --- */
+        .navbar {
+            background-color: #282c34; /* Darker blue/grey */
+            overflow: hidden;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between; /* Space out logo and links */
+            align-items: center; /* Vertically align items */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .navbar .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #61dafb; /* Light blue for contrast */
+            text-decoration: none; /* Remove underline from logo if it's a link */
+        }
+
+        .navbar ul {
+            list-style-type: none; /* Remove bullet points */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Arrange links horizontally */
+        }
+
+        .navbar ul li {
+            margin-left: 25px; /* Space between links */
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none; /* Remove underline */
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+            border-radius: 5px;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #4a505c; /* Lighter background on hover */
+            color: #61dafb; /* Change text color on hover */
+        }
+
+        /* --- Main Content Styling --- */
+        .content {
+            flex: 1; /* Allows content to grow and push the footer down */
+            padding: 40px 20px;
+            max-width: 960px; /* Max width for content readability */
+            margin: 0 auto; /* Center the content block */
+        }
+
+        .content h1, .content h2 {
+            color: #282c34;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .image-container {
+            text-align: center; /* Center images */
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-container img {
+            max-width: 100%; /* Make images responsive */
+            height: auto;    /* Maintain aspect ratio */
+            border-radius: 8px;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto 15px auto; /* Center image within its container and add space below */
+        }
+
+        .image-container p.caption {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* --- Footer Styling --- */
+        .footer {
+            background-color: #282c34; /* Same as navbar for consistency */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px; /* Space above footer */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* --- Responsive Adjustments (Optional but Recommended) --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column; /* Stack logo and links on small screens */
+                padding: 15px 15px;
+            }
+            .navbar ul {
+                margin-top: 15px;
+                flex-direction: column; /* Stack links vertically */
+                width: 100%;
+                text-align: center;
+            }
+            .navbar ul li {
+                margin: 0 0 10px 0; /* Adjust spacing for stacked links */
+            }
+            .navbar ul li a {
+                display: block; /* Make links full width */
+            }
+            .content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">MySite</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="home">
+            <h1>Welcome to Our Amazing World!</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </section>
+
+        <section id="gallery">
+            <h2>Our Beautiful Gallery</h2>
+
+            <div class="image-container">
+                <img src="city.jfif" alt="A beautiful landscape with mountains and a clear sky.">
+                <p class="caption">A stunning view of nature's beauty, perfect for contemplation.</p>
+            </div>
+
+            
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                We are a passionate team dedicated to showcasing the world's beauty through stunning imagery and engaging content. Our mission is to inspire, educate, and connect people through the power of visual storytelling. We believe every picture tells a thousand words, and we're here to share those stories with you.
+            </p>
+            <p>
+                Our commitment extends to providing high-quality, accessible content for everyone. Whether you're here for inspiration, information, or simply to enjoy beautiful visuals, we hope you find what you're looking for.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 MySite. All rights reserved. | Designed with &#10084; in Colombo, Sri Lanka</p>
+    </footer>
+
+</body>
+</html>
